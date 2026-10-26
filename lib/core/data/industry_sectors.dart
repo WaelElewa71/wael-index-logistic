@@ -5,7 +5,7 @@ const industrySectors = <IndustrySector>[
   IndustrySector(
     id: 'food_agriculture',
     name: LocalizedText(
-      'المنتجات الغذائية والزراعية',
+      'الأغذية والحاصلات الزراعية',
       'Food and Agricultural Products',
       'Produits alimentaires et agricoles',
     ),
@@ -53,7 +53,7 @@ const industrySectors = <IndustrySector>[
   IndustrySector(
     id: 'handicrafts_heritage',
     name: LocalizedText(
-      'الحرف اليدوية والمنتجات التراثية',
+      'الحرف اليدوية والتراثية',
       'Handicrafts and Heritage Products',
       'Artisanat et produits du patrimoine',
     ),

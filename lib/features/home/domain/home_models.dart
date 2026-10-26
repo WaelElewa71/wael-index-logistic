@@ -1,4 +1,20 @@
 import '../../../core/domain/localized_text.dart';
+import '../../../core/domain/industry_sector.dart';
+
+/// A snapshot of the local Home catalogue, independent of its data source.
+class HomeData {
+  HomeData({
+    required List<ServiceItem> services,
+    required List<BusinessPartner> partners,
+    required List<IndustrySector> sectors,
+  }) : services = List.unmodifiable(services),
+       partners = List.unmodifiable(partners),
+       sectors = List.unmodifiable(sectors);
+
+  final List<ServiceItem> services;
+  final List<BusinessPartner> partners;
+  final List<IndustrySector> sectors;
+}
 
 enum IndexService {
   directory,

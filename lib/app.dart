@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'core/localization/app_strings.dart';
 import 'core/theme/app_theme.dart';
 import 'features/home/data/home_mock_data.dart';
 import 'features/home/presentation/home_screen.dart';
+import 'features/home/presentation/cubit/home_cubit.dart';
 
 class IndexApp extends StatefulWidget {
   const IndexApp({super.key});
@@ -27,10 +29,11 @@ class _IndexAppState extends State<IndexApp> {
       GlobalWidgetsLocalizations.delegate,
       GlobalCupertinoLocalizations.delegate,
     ],
-    home: HomeScreen(
-      services: homeServices,
-      partners: samplePartners,
-      onLocaleChanged: (locale) => setState(() => _locale = locale),
+    home: BlocProvider(
+      create: (_) => HomeCubit(loadData: loadHomeMockData)..load(),
+      child: HomeScreen(
+        onLocaleChanged: (locale) => setState(() => _locale = locale),
+      ),
     ),
   );
 }

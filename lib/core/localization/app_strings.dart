@@ -13,6 +13,18 @@ class AppStrings {
   String text(LocalizedText value) => value.resolve(locale.languageCode);
   String operator [](String key) => text(_values[key]!);
   static const _values = <String, LocalizedText>{
+    'sectors': LocalizedText('القطاع', 'Sector', 'Secteur'),
+    'allSectors': LocalizedText(
+      'كل القطاعات',
+      'All sectors',
+      'Tous les secteurs',
+    ),
+    'loadError': LocalizedText(
+      'تعذر تحميل البيانات',
+      'Unable to load data',
+      'Impossible de charger les données',
+    ),
+    'retry': LocalizedText('إعادة المحاولة', 'Retry', 'Réessayer'),
     'greeting': LocalizedText(
       'مساء الخير',
       'Welcome to Index',

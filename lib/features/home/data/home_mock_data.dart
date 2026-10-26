@@ -1,5 +1,12 @@
 import '../../../core/domain/localized_text.dart';
+import '../../../core/data/industry_sectors.dart';
 import '../domain/home_models.dart';
+
+Future<HomeData> loadHomeMockData() async => HomeData(
+  services: homeServices,
+  partners: samplePartners,
+  sectors: industrySectors,
+);
 
 const homeServices = <ServiceItem>[
   ServiceItem(
@@ -60,6 +67,7 @@ const homeServices = <ServiceItem>[
 const samplePartners = <BusinessPartner>[
   BusinessPartner(
     id: 'demo_shipping',
+    sectorIds: ['food_agriculture', 'textiles_clothing_leather'],
     initial: 'M',
     name: LocalizedText(
       'مرسى للشحن — نموذج',
@@ -78,6 +86,7 @@ const samplePartners = <BusinessPartner>[
   ),
   BusinessPartner(
     id: 'demo_customs',
+    sectorIds: ['chemicals_fertilizers', 'construction_metals'],
     initial: 'W',
     name: LocalizedText(
       'وصل للتخليص — نموذج',
